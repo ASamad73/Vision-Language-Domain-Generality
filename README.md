@@ -74,14 +74,14 @@ I led **Task 3: CLIP Prompt Learning & Stability**, where I focused on the integ
 
 ---
 
-⚠ ##Limitations & Reproducibility##
+## ⚠ Limitations & Reproducibility
 * **Robustness Trade-off:** Observed a clear "adaptation-generality" trade-off; while prompt tuning significantly improves performance on stylized target domains, it induces architectural brittleness and overconfidence on open-set (unseen) classes.
 * **Optimization Sensitivity:** Methods like IRM and Group-DRO showed high sensitivity to penalty weights and environment partitioning. Similarly, SAM (Sharpness-Aware Minimization) provides superior generalization but requires a double-backward pass, increasing computational overhead by ~2x per iteration.
 * **Gradient Conflict:** In the CLIP task, we identified that training on disparate domains (e.g., Sketch vs. Cartoon) often generates **conflicting gradient directions**, which can lead to unstable prompt embeddings. Without alignment strategies like **PCGrad**, the optimization may converge to a solution that favors one domain at the catastrophic expense of others.
 
 ---
 
-## 🤝 Team Roles & Contributions ##
+## 🤝 Team Roles & Contributions 
 * **Abdul Samad:** Lead for DA/DG with CLIP (CLIP Prompt Learning, PCGrad, and Open-Set Robustness analysis). (See detailed [My Contributions] section above).
 * **Hamza Habib:** Lead for Domain Generalization.
 * **Rumaan Mujtaba:** Lead for Domain Adaptation.
