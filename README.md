@@ -75,8 +75,8 @@ I led **Task 3: CLIP Prompt Learning & Stability**, where I focused on the integ
 
 ## 🤝 Team Roles & Contributions ##
 * **Abdul Samad:** Lead for DA/DG with CLIP (CLIP Prompt Learning, PCGrad, and Open-Set Robustness analysis). (See detailed My Contributions section above).
-* **Hamza Habib:** Lead for Task 2 (SAM and Group-DRO implementations).
-* **Rumaan Mujtaba:** Lead for Task 1 (UDA, DANN, and Entropy Minimization benchmarking).
+* **Hamza Habib:** Lead for Domain Generalization.
+* **Rumaan Mujtaba:** Lead for Domain Adaptation.
 
 ---
 
