@@ -71,6 +71,13 @@ I led **Task 3: CLIP Prompt Learning & Stability**, where I focused on the integ
 └── README.md                   # Project documentation
 
 ```
+
+---
+
+##⚠ Limitations & Reproducibility##
+* **Robustness Trade-off:** Observed a clear "adaptation-generality" trade-off; while prompt tuning significantly improves performance on stylized target domains, it induces architectural brittleness and overconfidence on open-set (unseen) classes.
+* **Optimization Sensitivity:** Methods like IRM and Group-DRO showed high sensitivity to penalty weights and environment partitioning. Similarly, SAM (Sharpness-Aware Minimization) provides superior generalization but requires a double-backward pass, increasing computational overhead by ~2x per iteration.
+
 ---
 
 ## 🤝 Team Roles & Contributions ##
