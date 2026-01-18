@@ -1,8 +1,6 @@
-# 🖼️ VL-Generalization: Robust DA/DG via Invariant Learning & Prompt Tuning 🚀
-
 <p align="center">
   <h1 align="center">
-    🌐 Vision-Language Domain Generality: <br> Robust DA/DG via Invariant Learning & Prompt Tuning 🧬
+    🖼️ Vision-Language Domain Generality: <br> Robust DA/DG via Invariant Learning & Prompt Tuning 🚀
   </h1>
   <i>Investigating Robustness under Distribution Shift: From Empirical Risk Minimization to CLIP Prompt Alignment</i>
 </p>
@@ -25,38 +23,33 @@ I led **Task 3: CLIP Prompt Learning & Stability**, where I focused on the integ
 * **Gradient Alignment (PCGrad)**: Orchestrated a multi-source gradient alignment strategy using **Projected Conflicting Gradients (PCGrad)**. By projecting conflicting domain gradients onto orthogonal planes, I **doubled the average cosine similarity** between gradient vectors (0.17 ➔ 0.33), effectively mitigating negative interference.
 * **Robustness Quantification**: Analyzed the trade-off between adaptation and open-set robustness using **AUROC** and **Mean Maximum Softmax Probability (MSP)**. I identified "architectural brittleness," where prompt tuning improved domain-specific performance (AUROC to 0.56) but led to near-orthogonal embeddings (0.0132 similarity) and overconfidence on unseen classes.
 
-
-
 ---
 
 ## 🧠 Architecture & Methodology
 
-### 🔹 Task 1: Unsupervised Domain Adaptation (UDA)
+### 🔹 Unsupervised Domain Adaptation (UDA)
 * **Approach**: Evaluated models on the Digit-Bench (MNIST, SVHN, USPS). 
 * **Key Finding**: Purely adversarial methods (DANN/CDAN) are enhanced significantly by **Entropy Minimization**, which forces the model to make confident predictions on the unlabeled target domain.
 
-### 🔹 Task 2: DG via Invariant & Robust Learning
+### 🔹 DG via Invariant & Robust Learning
 * **Techniques**: Compared IRM, Group-DRO, and **Sharpness-Aware Minimization (SAM)**.
 * **Key Finding**: SAM consistently outperformed IRM and Group-DRO on the PACS dataset. By seeking **geometrically flat minima**, SAM avoids over-fitting to specific domain variances, preserving class discriminability.
 
-
-
-### 🔹 Task 3: CLIP Stability (Lead: Abdul Samad)
+### 🔹 CLIP Stability 
 * **Problem**: Does prompt tuning on stylized data (e.g., Sketch) degrade CLIP's general knowledge?
 * **Mechanism**: Implemented learnable prompts and **PCGrad** to ensure that updates from "Domain A" do not cancel out the performance on "Domain B."
 
-
-
 ---
 
-## 📊 Quantitative Summary
+## 📊 Quantitative Summary (Global Results)
 
-| Method | Metric | Result | Improvement |
-| :--- | :--- | :--- | :--- |
-| **CLIP (Zero-Shot)** | Accuracy | 17.33% | Baseline |
-| **CLIP (CoOp + Entropy Min)** | Accuracy | **22.17%** | **+4.84%** |
-| **Gradient Alignment** | Cosine Sim | **0.33** | **~2x Alignment** |
-| **SAM (Task 2)** | Mean Accuracy | **84.2%** | Superior over IRM |
+| Task | Method | Metric | Result | Key Insight |
+| :--- | :--- | :--- | :--- | :--- |
+| **UDA** | CDAN + Ent-Min | Accuracy | **43.1%** | Surpassed standard DANN (38.5%). |
+| **DG** | SAM | Mean Acc | **84.2%** | Superior robustness over IRM (81.8%). |
+| **CLIP** | CoOp + Ent-Min | Accuracy | **22.17%** | +4.8% improvement over Zero-Shot. |
+| **CLIP** | PCGrad | Cosine Sim | **0.33** | 2x increase in gradient agreement. |
+| **Robust** | Prompt Tuning | AUROC | **0.56** | High domain-acc but lower open-set stability. |
 
 ---
 
@@ -78,10 +71,19 @@ I led **Task 3: CLIP Prompt Learning & Stability**, where I focused on the integ
 └── README.md                   # Project documentation
 
 ```
-
 ---
 
 ## 🤝 Team Roles & Contributions ##
 * **Abdul Samad:** Lead for DA/DG with CLIP (CLIP Prompt Learning, PCGrad, and Open-Set Robustness analysis). (See detailed My Contributions section above).
 * **Hamza Habib:** Lead for Task 2 (SAM and Group-DRO implementations).
 * **Rumaan Mujtaba:** Lead for Task 1 (UDA, DANN, and Entropy Minimization benchmarking).
+
+---
+
+## 📄 Reference
+
+The research work and detailed metrics are documented in our [📄 Research Paper](./docs/Technical_Project_Report.pdf).
+
+---
+
+⭐️ If you find this research useful, please consider giving the repository a star!
